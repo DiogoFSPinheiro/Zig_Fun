@@ -49,7 +49,7 @@
 //       of an empty expression. It's much more common to see void as
 //       the return type of a function that returns nothing.
 //
-// Zig has all of these ways of expressing different types of "no value"
+// Zig has all of these ways of expressing different types of "no value" TODO check this when in dubt
 // because they each serve a purpose. Briefly:
 //
 //   * undefined - there is no value YET, this cannot be read YET
@@ -65,10 +65,10 @@ const std = @import("std");
 const Err = error{Cthulhu};
 
 pub fn main() void {
-    var first_line1: *const [16]u8 = ???;
+    var first_line1: *const [16]u8 = undefined;
     first_line1 = "That is not dead";
 
-    var first_line2: Err!*const [21]u8 = ???;
+    var first_line2: Err!*const [21]u8 = error.Cthulhu;
     first_line2 = "which can eternal lie";
 
     // Note we need the "{!s}" format for the error union string.
@@ -77,8 +77,8 @@ pub fn main() void {
     printSecondLine();
 }
 
-fn printSecondLine() ??? {
-    var second_line2: ?*const [18]u8 = ???;
+fn printSecondLine() void {
+    var second_line2: ?*const [18]u8 = null;
     second_line2 = "even death may die";
 
     std.debug.print("And with strange aeons {s}.\n", .{second_line2.?});
