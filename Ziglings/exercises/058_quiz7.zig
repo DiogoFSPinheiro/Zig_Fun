@@ -1,6 +1,6 @@
 //
 // We've absorbed a lot of information about the variations of types
-// we can use in Zig. Roughly, in order we have:
+// we can use in Zig. Roughly, in order we have: //TODO great info here!
 //
 //                          u8  single item
 //                         *u8  single-item pointer
@@ -192,8 +192,8 @@ const TripItem = union(enum) {
             // Oops! The hermit forgot how to capture the union values
             // in a switch statement. Please capture both values as
             // 'p' so the print statements work!
-            .place => print("{s}", .{p.name}),
-            .path => print("--{}->", .{p.dist}),
+            .place => print("{s}", .{self.name}),
+            .path => print("--{}->", .{self.dist}),
         }
     }
 };
