@@ -1,6 +1,6 @@
 //
 // We've absorbed a lot of information about the variations of types
-// we can use in Zig. Roughly, in order we have: //TODO great info here!
+// we can use in Zig. Roughly, in order we have: //TODO Variables
 //
 //                          u8  single item
 //                         *u8  single-item pointer
@@ -192,8 +192,8 @@ const TripItem = union(enum) {
             // Oops! The hermit forgot how to capture the union values
             // in a switch statement. Please capture both values as
             // 'p' so the print statements work!
-            .place => print("{s}", .{self.name}),
-            .path => print("--{}->", .{self.dist}),
+            .place => print("{s}", .{self.place.name}),
+            .path => print("--{}->", .{self.path.dist}),
         }
     }
 };
@@ -255,7 +255,7 @@ const HermitsNotebook = struct {
             // dereference and optional value "unwrapping" look
             // together. Remember that you return the address with the
             // "&" operator.
-            if (place == entry.*.?.place) return entry;
+            if (place == entry.*.?.place) return &entry.*.?; //TODO Crazy stuff
             // Try to make your answer this long:__________;
         }
         return null;

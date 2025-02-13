@@ -14,7 +14,7 @@
 // Thankfully, Zig has slices, which let you dynamically point to a
 // start item and provide a length. Here are slices of our digit
 // array:
-//
+//												TODO Slices
 //     const foo = digits[0..1];  // 0
 //     const bar = digits[3..9];  // 3 4 5 6 7 8
 //     const baz = digits[5..9];  // 5 6 7 8
