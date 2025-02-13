@@ -1,5 +1,5 @@
 //
-// Now that you know how "defer" works, let's do something more
+// Now that you know how "defer" works, let's do something more TODO Defer
 // interesting with it.
 //
 const std = @import("std");

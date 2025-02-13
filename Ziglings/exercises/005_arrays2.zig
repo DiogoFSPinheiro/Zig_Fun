@@ -7,7 +7,7 @@
 //   const b = [_]u8{ 3,4 };
 //   const c = a ++ b ++ [_]u8{ 5 }; // equals 1 2 3 4 5
 //
-// You can use '**' to repeat an array:
+// You can use '**' to repeat an array: TODO ** Operator
 //
 //   const d = [_]u8{ 1,2,3 } ** 2; // equals 1 2 3 1 2 3
 //

@@ -25,7 +25,7 @@
 const std = @import("std");
 
 pub fn main() void {
-    const lang_chars = [_]u8{ 26, 9, 7, 42 };
+    const lang_chars = [_]u8{ 26, 9, 7, 42 }; //TODO Switch
 
     for (lang_chars) |c| {
         switch (c) {
