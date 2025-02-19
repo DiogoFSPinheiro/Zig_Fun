@@ -17,7 +17,7 @@
 //
 // Zig supports sentinel-terminated arrays, slices, and pointers:
 //
-//     const a: [4:0]u32       =  [4:0]u32{1, 2, 3, 4};
+//     const a: [4:0]u32       =  [4:0]u32{1, 2, 3, 4}; // TODO Zero terminated string -> [n:0]
 //     const b: [:0]const u32  = &[4:0]u32{1, 2, 3, 4};
 //     const c: [*:0]const u32 = &[4:0]u32{1, 2, 3, 4};
 //
@@ -82,19 +82,19 @@ fn printSequence(my_seq: anytype) void {
             print("Array:", .{});
 
             // Loop through the items in my_seq.
-            for (???) |s| {
+            for (my_seq) |s| {
                 print("{}", .{s});
             }
         },
         .Pointer => {
             // Check this out - it's pretty cool:
-            const my_sentinel = sentinel(@TypeOf(my_seq));
+            const my_sentinel = sentinel(@TypeOf(my_seq)); //TODO Sentinels
             print("Many-item pointer:", .{});
 
             // Loop through the items in my_seq until we hit the
             // sentinel value.
             var i: usize = 0;
-            while (??? != my_sentinel) {
+            while (my_seq[i]  != my_sentinel) {
                 print("{}", .{my_seq[i]});
                 i += 1;
             }
