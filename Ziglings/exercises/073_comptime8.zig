@@ -1,5 +1,5 @@
 //
-// As a matter of fact, you can put 'comptime' in front of any
+// As a matter of fact, you can put 'comptime' in front of any //TODO comptime
 // expression to force it to be run at compile time.
 //
 // Execute a function:
@@ -32,12 +32,12 @@ const llamas = [llama_count]u32{ 5, 10, 15, 20, 25 };
 pub fn main() void {
     // We meant to fetch the last llama. Please fix this simple
     // mistake so the assertion no longer fails.
-    const my_llama = getLlama(5);
+    const my_llama = getLlama(4);
 
     print("My llama value is {}.\n", .{my_llama});
 }
 
-fn getLlama(i: usize) u32 {
+fn getLlama(comptime i: usize) u32 {
     // We've put a guard assert() at the top of this function to
     // prevent mistakes. The 'comptime' keyword here means that
     // the mistake will be caught when we compile!
