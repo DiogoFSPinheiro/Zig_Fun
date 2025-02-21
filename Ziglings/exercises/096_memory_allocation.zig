@@ -9,7 +9,7 @@
 // You'll need to request memory for your program to be allocated by
 // your operating system at runtime.
 //
-// Zig provides several different allocators. In the Zig
+// Zig provides several different allocators. In the Zig                    TODO Allocators
 // documentation, it recommends the Arena allocator for simple
 // programs which allocate once and then exit:
 //
@@ -64,7 +64,7 @@ pub fn main() !void {
     const allocator = arena.allocator();
 
     // allocate memory for this array
-    const avg: []f64 = ???;
+    const avg: []f64 = try allocator.alloc(f64, 5);
 
     runningAverage(arr, avg);
     std.debug.print("Running Average: ", .{});

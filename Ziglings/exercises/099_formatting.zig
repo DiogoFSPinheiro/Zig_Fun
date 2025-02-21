@@ -80,7 +80,7 @@
 // for all numbers from 1-15. We want the table to be nice and
 // neat, with numbers in straight columns like so:
 //
-//      X |  1   2   3   4   5  ...
+//      X |  1   2   3   4   5  ...                                 TODO Formating
 //     ---+---+---+---+---+---+
 //      1 |  1   2   3   4   5
 //
@@ -131,7 +131,7 @@ pub fn main() !void {
         for (0..size) |b| {
             // What formatting is needed here to make our columns
             // nice and straight?
-            print("{???} ", .{(a + 1) * (b + 1)});
+            print("{d:>3} ", .{(a + 1) * (b + 1)});
         }
 
         // After each row we use double line feed:
