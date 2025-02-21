@@ -1,5 +1,5 @@
 //
-// With tagged unions, it gets EVEN BETTER! If you don't have a
+// With tagged unions, it gets EVEN BETTER! If you don't have a TODO Unions
 // need for a separate enum, you can define an inferred enum with
 // your union all in one place. Just use the 'enum' keyword in
 // place of the tag type:

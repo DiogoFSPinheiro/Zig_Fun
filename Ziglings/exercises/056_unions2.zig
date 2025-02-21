@@ -2,7 +2,7 @@
 // It is really quite inconvenient having to manually keep track
 // of the active field in our union, isn't it?
 //
-// Thankfully, Zig also has "tagged unions", which allow us to
+// Thankfully, Zig also has "tagged unions", which allow us to TODO Unions
 // store an enum value within our union representing which field
 // is active.
 //
